@@ -140,6 +140,22 @@ export const PROJECTS: Project[] = [
     placeholder: false,
   },
   {
+    name: 'Wapu Serverless API',
+    year: '2026',
+    accent: '#ff9900',
+    tagline: {
+      en: '12 microservices on AWS Lambda',
+      es: '12 microservicios en AWS Lambda',
+    },
+    description: {
+      en: 'Serverless backend powering the Wapu platform: 12 independently deployable microservices (auth, appointments, catalog, accounting, HR, payroll, payments, cash, inventory, invoicing, analytics) built with strict Clean Architecture in TypeScript. AWS Lambda + API Gateway, Cognito auth (JWT), RDS PostgreSQL, CloudFront, IoT Core over MQTT, SSM/SES/SNS, CI/CD via GitHub Actions.',
+      es: 'Backend serverless que impulsa la plataforma Wapu: 12 microservicios desplegables de forma independiente (auth, citas, catálogo, contabilidad, RR. HH., nóminas, pagos, caja, inventario, facturación, analítica) con Clean Architecture estricta en TypeScript. AWS Lambda + API Gateway, auth con Cognito (JWT), RDS PostgreSQL, CloudFront, IoT Core sobre MQTT, SSM/SES/SNS y CI/CD con GitHub Actions.',
+    },
+    tech: ['AWS Lambda', 'API Gateway', 'Cognito', 'RDS PostgreSQL', 'CloudFront', 'IoT Core', 'Serverless v3', 'Node.js 24', 'Clean Architecture'],
+    url: 'https://wapu-api.vercel.app',
+    placeholder: false,
+  },
+  {
     name: '',
     year: '',
     accent: '#9b4dff',
