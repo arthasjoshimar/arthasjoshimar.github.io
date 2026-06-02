@@ -81,7 +81,7 @@ export const PROFILE = {
   email: 'jesuscallisayasalinas@gmail.com',
   phone: '+591 79127459',
   linkedin: 'https://linkedin.com/in/jesus-callisaya',
-  github: 'https://github.com/jesus-callisaya',
+  github: 'https://github.com/arthasjoshimar',
   cv: 'assets/CV-jesus-callisaya.pdf',
 };
 
