@@ -147,10 +147,48 @@
     </div>
   </section>
 
+  <!-- ============ PROJECTS ============ -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section__title"><span class="num">04</span>{{ tr(UI.projectsTitle) }}</h2>
+      <p class="section__sub">{{ tr(UI.projectsSubtitle) }}</p>
+      <div class="projects">
+        @for (p of projects; track p.tagline.en) {
+          <article class="project" [class.project--soon]="p.placeholder" [style.--proj]="p.accent">
+            @if (p.placeholder) {
+              <div class="project__soon-badge">{{ tr(UI.projectSoon) }}</div>
+              <h3 class="project__name">{{ tr(p.tagline) }}</h3>
+              <p class="project__desc">{{ tr(p.description) }}</p>
+              <div class="project__plus">+</div>
+            } @else {
+              <div class="project__head">
+                <h3 class="project__name">{{ p.name }}</h3>
+                <span class="project__year">{{ p.year }}</span>
+              </div>
+              <p class="project__tagline">{{ tr(p.tagline) }}</p>
+              <p class="project__desc">{{ tr(p.description) }}</p>
+              <ul class="tags">
+                @for (t of p.tech; track t) { <li>{{ t }}</li> }
+              </ul>
+              <div class="project__cta">
+                @if (p.url) {
+                  <a class="btn btn--primary btn--sm" [href]="p.url" target="_blank" rel="noopener">{{ tr(UI.projectVisit) }} ↗</a>
+                }
+                @if (p.repo) {
+                  <a class="btn btn--sm" [href]="p.repo" target="_blank" rel="noopener">{{ tr(UI.projectCode) }}</a>
+                }
+              </div>
+            }
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
   <!-- ============ IMPACT ============ -->
   <section id="impact" class="section section--impact">
     <div class="container">
-      <h2 class="section__title"><span class="num">04</span>{{ tr(UI.impactTitle) }}</h2>
+      <h2 class="section__title"><span class="num">05</span>{{ tr(UI.impactTitle) }}</h2>
       <p class="section__sub">{{ tr(UI.impactSubtitle) }}</p>
       <div class="metrics">
         @for (m of metrics; track m.label.en) {

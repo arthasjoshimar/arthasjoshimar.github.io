@@ -462,6 +462,101 @@
   font-size: 0.9rem;
 }
 
+/* ---------------- PROJECTS ---------------- */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 20px;
+}
+.project {
+  --proj: var(--accent);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 26px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  overflow: hidden;
+  transition: var(--transition);
+}
+.project::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: var(--proj);
+}
+.project:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--proj) 55%, var(--border));
+  box-shadow: var(--shadow);
+}
+.project__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+.project__name {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  margin: 0;
+}
+.project__year {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--proj);
+  white-space: nowrap;
+}
+.project__tagline {
+  color: var(--proj);
+  font-weight: 600;
+  font-size: 0.92rem;
+  margin: 6px 0 10px;
+}
+.project__desc {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  margin: 0 0 16px;
+  flex: 1;
+}
+.project__cta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+/* placeholder / empty slot */
+.project--soon {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-style: dashed;
+  background: transparent;
+  min-height: 230px;
+}
+.project--soon:hover {
+  transform: none;
+}
+.project__soon-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-mute);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 14px;
+}
+.project__plus {
+  font-size: 2.4rem;
+  font-weight: 300;
+  color: var(--text-mute);
+  margin-top: 14px;
+}
+
 /* ---------------- IMPACT ---------------- */
 .section--impact {
   background: var(--bg-elev);

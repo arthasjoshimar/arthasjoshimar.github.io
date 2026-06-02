@@ -1,6 +1,6 @@
 import { Component, HostListener, inject, signal } from '@angular/core';
 import { AppState } from './state';
-import { EXPERIENCE, HERO_STATS, METRICS, PROFILE, SKILLS, UI } from './content';
+import { EXPERIENCE, HERO_STATS, METRICS, PROFILE, PROJECTS, SKILLS, UI } from './content';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +17,7 @@ export class App {
   protected readonly heroStats = HERO_STATS;
   protected readonly skills = SKILLS;
   protected readonly experience = EXPERIENCE;
+  protected readonly projects = PROJECTS;
   protected readonly metrics = METRICS;
 
   protected readonly year = new Date().getFullYear();
@@ -27,6 +28,7 @@ export class App {
     { id: 'about', label: UI.navAbout },
     { id: 'skills', label: UI.navSkills },
     { id: 'experience', label: UI.navExperience },
+    { id: 'projects', label: UI.navProjects },
     { id: 'impact', label: UI.navImpact },
     { id: 'contact', label: UI.navContact },
   ];

@@ -25,11 +25,24 @@ export interface Metric {
   label: Bi;
 }
 
+export interface Project {
+  name: string;
+  tagline: Bi;
+  description: Bi;
+  tech: string[];
+  url?: string;
+  repo?: string;
+  year: string;
+  accent: string;
+  placeholder?: boolean;
+}
+
 /** UI strings keyed by id, each with both languages. */
 export const UI = {
   navAbout: { en: 'About', es: 'Perfil' },
   navSkills: { en: 'Skills', es: 'Skills' },
   navExperience: { en: 'Experience', es: 'Experiencia' },
+  navProjects: { en: 'Projects', es: 'Proyectos' },
   navImpact: { en: 'Impact', es: 'Impacto' },
   navContact: { en: 'Contact', es: 'Contacto' },
   downloadCv: { en: 'Download CV', es: 'Descargar CV' },
@@ -50,6 +63,14 @@ export const UI = {
   },
 
   skillsTitle: { en: 'Technical Skills', es: 'Habilidades Técnicas' },
+  projectsTitle: { en: 'Featured Projects', es: 'Proyectos Destacados' },
+  projectsSubtitle: {
+    en: 'Production applications I designed and shipped end-to-end.',
+    es: 'Aplicaciones en producción que diseñé y entregué de extremo a extremo.',
+  },
+  projectVisit: { en: 'Live demo', es: 'Demo en vivo' },
+  projectCode: { en: 'Code', es: 'Código' },
+  projectSoon: { en: 'Coming soon', es: 'Próximamente' },
   experienceTitle: { en: 'Experience', es: 'Experiencia' },
   presentLabel: { en: 'Present', es: 'Actualidad' },
   impactTitle: { en: 'Impact in Numbers', es: 'Impacto en Números' },
@@ -84,6 +105,37 @@ export const PROFILE = {
   github: 'https://github.com/arthasjoshimar',
   cv: 'assets/CV-jesus-callisaya.pdf',
 };
+
+export const PROJECTS: Project[] = [
+  {
+    name: 'ESG Supply-Chain Platform',
+    year: '2026',
+    accent: '#10b981',
+    tagline: {
+      en: 'Enterprise ESG intelligence SaaS',
+      es: 'SaaS de inteligencia ESG empresarial',
+    },
+    description: {
+      en: 'Large-scale Angular 20 + Nx micro-frontend platform for supply-chain sustainability: supplier management, audits, reporting and an executive dashboard with live Highcharts analytics. Supabase auth + PostgreSQL with row-level security, signal-based state and full CRUD across modules.',
+      es: 'Plataforma Angular 20 + Nx (micro-frontends) de gran escala para sostenibilidad de cadena de suministro: gestión de proveedores, auditorías, reportes y un dashboard ejecutivo con analítica en vivo (Highcharts). Auth con Supabase + PostgreSQL con row-level security, estado con signals y CRUD completo en todos los módulos.',
+    },
+    tech: ['Angular 20', 'Nx Monorepo', 'Signals', 'Supabase', 'PostgreSQL (RLS)', 'Highcharts', 'TypeScript'],
+    url: 'https://esg-platform-alpha.vercel.app/auth',
+    placeholder: false,
+  },
+  {
+    name: '',
+    year: '',
+    accent: '#9b4dff',
+    tagline: { en: 'Your next case study', es: 'Tu próximo caso de estudio' },
+    description: {
+      en: 'Slot reserved for an upcoming project — more production work on the way.',
+      es: 'Espacio reservado para un próximo proyecto — más trabajo en producción en camino.',
+    },
+    tech: [],
+    placeholder: true,
+  },
+];
 
 export const HERO_STATS: Metric[] = [
   { value: '10+', label: { en: 'Years experience', es: 'Años de experiencia' } },
